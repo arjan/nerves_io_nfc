@@ -41,6 +41,7 @@ defmodule Nerves.IO.NFC do
   end
 
   def handle_info(:timeout, state = %State{port: nil}) do
+    :timer.sleep 5000
     {:noreply, restart(state)}
   end
 
